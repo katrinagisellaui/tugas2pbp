@@ -1,7 +1,8 @@
 # Tugas 2: Pengenalan Aplikasi Django dan Models View Template (MVT) pada Django
 
+Klik [disini](https://tugas2pbpkatalog.herokuapp.com/katalog/) untuk menuju situs Heroku saya :D
 ## 1. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html!
-![Bagan](user.jpg)
+![Bagan](../Downloads/user.jpg)
 
 ## 2. Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
