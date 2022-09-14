@@ -2,7 +2,7 @@
 
 Klik [disini](https://tugas2pbpkatalog.herokuapp.com/katalog/) untuk menuju situs Heroku saya :D
 ## 1. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html!
-![Bagan](../Downloads/user.jpg)
+![Bagan](https://github.com/katrinagisellaui/tugas2pbp/blob/main/Bagan/user.jpg)
 
 ## 2. Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
