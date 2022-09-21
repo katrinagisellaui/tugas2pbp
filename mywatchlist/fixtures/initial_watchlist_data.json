@@ -6,8 +6,8 @@
             "watched": true,
             "title": "Gone Girl",
             "rating": 5,
-            "release_date": "2006-10-25",
-            "review": "lumayan bagus"
+            "release_date": "2014-10-3",
+            "review": "One of the best movies I have ever watched! A movie that interrogates the true meaning of commitment. Would highly recommend!"
         }
     },
     {
@@ -15,10 +15,10 @@
         "pk": 2,
         "fields": {
             "watched": false,
-            "title": "LalaLand",
-            "rating": 5,
-            "release_date": "2006-10-25",
-            "review": "katanya si bagus ya"
+            "title": "La La Land",
+            "rating": 4,
+            "release_date": "2016-12-9",
+            "review": "Have heard wonderful things about this movie. Furthermore, Emma Stone was awarded an Academy Award for her role in this film, cementing her place as a top actress"
         }
     },
     {
@@ -26,10 +26,10 @@
         "pk": 3,
         "fields": {
             "watched": true,
-            "title": "Gone Girl",
-            "rating": 5,
-            "release_date": "2021-01-01",
-            "review": "lumayan bagus"
+            "title": "Marriage Story",
+            "rating": 4,
+            "release_date": "2019-11-15",
+            "review": "A deeply personal movie that touches people's hearts. Wonderful performance from Johansson and Driver. Have rewatched several times, would highly recommend."
         }
     },
     {
@@ -37,10 +37,10 @@
         "pk": 4,
         "fields": {
             "watched": false,
-            "title": "LalaLand",
-            "rating": 5,
-            "release_date": "2021-01-01",
-            "review": "katanya si bagus ya"
+            "title": "Avatar",
+            "rating": 4,
+            "release_date": "2009-12-17",
+            "review": "A movie that holds the title of highest-grossing film. Reviewers have described it as 'visually spellbinding'."
         }
     },
     {
@@ -48,10 +48,10 @@
         "pk": 5,
         "fields": {
             "watched": true,
-            "title": "Gone Girl",
+            "title": "Mean Girls",
             "rating": 5,
-            "release_date": "2021-01-01",
-            "review": "lumayan bagus"
+            "release_date": "2004-04-30",
+            "review": "A teen comedy film centering on a popular high school clique. Although humorous, Mean Girls reveals how everyone, deep inside, is a mean girl. Great acting, great casting, great screen writing. Truly deserves the cult following it has amassed."
         }
     },
     {
@@ -59,10 +59,10 @@
         "pk": 6,
         "fields": {
             "watched": false,
-            "title": "LalaLand",
-            "rating": 5,
-            "release_date": "2021-01-01",
-            "review": "katanya si bagus ya"
+            "title": "Soul",
+            "rating": 4,
+            "release_date": "2020-10-11",
+            "review": "Was personally reommended by friend who loves this movie. Tells a story of a New York jazz pianist."
         }
     },
     {
@@ -70,21 +70,21 @@
         "pk": 7,
         "fields": {
             "watched": true,
-            "title": "Gone Girl",
-            "rating": 5,
-            "release_date": "2021-01-01",
-            "review": "lumayan bagus"
+            "title": "Artificial Intelligence: AI",
+            "rating": 3,
+            "release_date": "2001-06-29",
+            "review": "My first Spielberg movie. Visually stunning and the plot is not awful, but I have watched better movies."
         }
     },
     {
         "model": "mywatchlist.mywatchlist",
         "pk": 8,
         "fields": {
-            "watched": false,
-            "title": "LalaLand",
-            "rating": 5,
-            "release_date": "2021-01-01",
-            "review": "katanya si bagus ya"
+            "watched": true,
+            "title": "Mean Girls 2",
+            "rating": 1,
+            "release_date": "2011-01-23",
+            "review": "Considering how big of a hit the first movie was, Mean Girls 2 was a huge disappointment. You are better off rewatching the original Mean Girls"
         }
     },
     {
@@ -92,21 +92,21 @@
         "pk": 9,
         "fields": {
             "watched": true,
-            "title": "Gone Girl",
+            "title": "Friend Zone",
             "rating": 5,
-            "release_date": "2021-01-01",
-            "review": "lumayan bagus"
+            "release_date": "2019-02-14",
+            "review": "A heartwarming movie. I would highly recommend."
         }
     },
     {
         "model": "mywatchlist.mywatchlist",
         "pk": 10,
         "fields": {
-            "watched": false,
-            "title": "LalaLand",
-            "rating": 5,
-            "release_date": "2021-01-01",
-            "review": "katanya si bagus ya"
+            "watched": true,
+            "title": "The Royal Tenenbaums",
+            "rating": 4,
+            "release_date": "2001-12-14",
+            "review": "A thrilling experience visually. Was my first Wes Anderson movie. I loved Gwyneth Paltrow in this movie."
         }
     }
 
