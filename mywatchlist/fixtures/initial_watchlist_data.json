@@ -1,0 +1,113 @@
+[
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "Gone Girl",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "lumayan bagus"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 2,
+        "fields": {
+            "watched": false,
+            "title": "LalaLand",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "katanya si bagus ya"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 3,
+        "fields": {
+            "watched": true,
+            "title": "Gone Girl",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "lumayan bagus"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 4,
+        "fields": {
+            "watched": false,
+            "title": "LalaLand",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "katanya si bagus ya"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 5,
+        "fields": {
+            "watched": true,
+            "title": "Gone Girl",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "lumayan bagus"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 6,
+        "fields": {
+            "watched": false,
+            "title": "LalaLand",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "katanya si bagus ya"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 7,
+        "fields": {
+            "watched": true,
+            "title": "Gone Girl",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "lumayan bagus"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 8,
+        "fields": {
+            "watched": false,
+            "title": "LalaLand",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "katanya si bagus ya"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 9,
+        "fields": {
+            "watched": true,
+            "title": "Gone Girl",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "lumayan bagus"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 10,
+        "fields": {
+            "watched": false,
+            "title": "LalaLand",
+            "rating": 5,
+            "release_date": "2021-01-01",
+            "review": "katanya si bagus ya"
+        }
+    }
+
+]
