@@ -1,14 +1,15 @@
 from django.test import TestCase
 
 # Create your tests here.
-from django.test import TestCase, Client
+class TestURL(TestCase):
+    def test_html(self):
+        response = self.client.get('/mywatchlist/html/')
+        self.assertEqual(response.status_code, 200)
+    
+    def test_xml(self):
+        response = self.client.get('/mywatchlist/xml/')
+        self.assertEqual(response.status_code, 200)
 
-client = Client()
-
-
-def test_create(self):
-    """Test the url for "create"
-    """
-
-    response = self.client.get('/mywatchlist/html/{0}/'.format(self.userName))
-    self.assertEqual(response.status_code, 200)
+    def test_json(self):
+        response = self.client.get('/mywatchlist/json/')
+        self.assertEqual(response.status_code, 200)
