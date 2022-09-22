@@ -62,7 +62,7 @@ Saya membuat function pada views.py dan juga menambahkan
     path('', show_mainpage, name='show_mainpage'),
 ...
 ```
-pada urls.py unntuk mengimplementasikan step ini.
+pada urls.py untuk mengimplementasikan step ini.
 
 ### Melakukan deployment ke Heroku
 
