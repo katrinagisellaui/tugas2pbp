@@ -65,3 +65,13 @@ Saya membuat function pada views.py dan juga menambahkan
 pada urls.py unntuk mengimplementasikan step ini.
 
 ### Melakukan deployment ke Heroku
+
+## Postman
+### HTML
+![HTML](https://github.com/katrinagisellaui/tugas2pbp/blob/main/mywatchlist/Postman/Screen%20Shot%202022-09-22%20at%2000.42.02.png)
+
+### XML
+![XML](https://github.com/katrinagisellaui/tugas2pbp/blob/main/mywatchlist/Postman/Screen%20Shot%202022-09-22%20at%2000.42.15.png)
+
+### JSON
+![JSON](https://github.com/katrinagisellaui/tugas2pbp/blob/main/mywatchlist/Postman/Screen%20Shot%202022-09-22%20at%2000.43.04.png)
