@@ -2,7 +2,7 @@
 
  {% block content %}
   <body style="background-color:powderblue;">
-  <h1>Tugas 4 Assignment PBP/PBD</h1>
+  <h1>Tugas 4 Assignment PBP</h1>
 
   <h5>Username </h5>
   <p>{{username}}</p>
@@ -18,14 +18,30 @@
       <th>Date</th>
       <th>Title</th>
       <th>Description</th>
+      <th>Done</th>
+      <th>Change Done</th>
+      <th>Delete</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
-    {% for barang in list_todolist %}
+    {% for task in list_todolist %}
         <tr>
-            <th>{{barang.user}}</th>
-            <th>{{barang.date}}</th>
-            <th>{{barang.title}}</th>
-            <th>{{barang.description}}</th>
+            <th>{{task.user}}</th>
+            <th>{{task.date}}</th>
+            <th>{{task.title}}</th>
+            <th>{{task.description}}</th>
+            <th>
+                {% if task.done %}
+                Done
+                {% else %}
+                Not Done
+                {% endif %}
+            </th>
+            <th>
+            <button><a href="{% url 'todolist:change_done' task.id %}" title="">Change</a></button>
+            </th>
+            <th>
+            <button><a href="{% url 'todolist:remove_task' task.id %}" title="">Remove</a></button>
+            </th>
         </tr>
     {% endfor %}
   </table>

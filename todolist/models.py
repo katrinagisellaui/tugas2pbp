@@ -7,5 +7,6 @@ class Task(models.Model):
     date = models.DateField()
     title = models.TextField()
     description = models.TextField()
-    # status = models.BooleanField()
+    done = models.BooleanField(default = False)
+
 

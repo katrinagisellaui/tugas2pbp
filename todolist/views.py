@@ -1,4 +1,3 @@
-from multiprocessing import context
 from urllib import response
 from django.shortcuts import render, redirect, get_object_or_404
 from django.shortcuts import redirect
@@ -80,10 +79,16 @@ def create_task(request):
     context = {'form':form}
     return render(request, 'create_task.html', context)
 
-def remove_task(request, id2):
-    deletion = Task.objects.filter(id = id2)
+def remove_task(request, id):
+    deletion = Task.objects.filter(id=id)
     deletion.delete()
-    return redirect(show_todolist)
+    return redirect('todolist:show_todolist')
+
+def change_done(request, id):
+    change = Task.objects.get(id = id)
+    change.done = not(change.done)
+    change.save()
+    return redirect('todolist:show_todolist')
 
 
 
