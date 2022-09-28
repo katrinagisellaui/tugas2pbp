@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Create Task</title>
+{% endblock meta %}
+
+{% block content %}
+<body style="background-color:rgb(178, 230, 176);">
+
+<div class = "create_task">
+    <h1>Create Task</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type ="submit" name="submit" value="Create Task">
+        </form>
+</div>
+{% endblock content %}
+
