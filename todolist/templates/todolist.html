@@ -18,8 +18,8 @@
       <th>Date</th>
       <th>Title</th>
       <th>Description</th>
-      <th>Done</th>
-      <th>Change Done</th>
+      <th>Is Finished?</th>
+      <th>Change Finish </th>
       <th>Delete</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
@@ -30,10 +30,10 @@
             <th>{{task.title}}</th>
             <th>{{task.description}}</th>
             <th>
-                {% if task.done %}
-                Done
+                {% if task.is_finished %}
+                Selesai
                 {% else %}
-                Not Done
+                Belum Selesai
                 {% endif %}
             </th>
             <th>

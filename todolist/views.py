@@ -86,7 +86,7 @@ def remove_task(request, id):
 
 def change_done(request, id):
     change = Task.objects.get(id = id)
-    change.done = not(change.done)
+    change.is_finished = not(change.is_finished)
     change.save()
     return redirect('todolist:show_todolist')
 
