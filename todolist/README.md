@@ -1,5 +1,6 @@
 # Tugas 4 PBP
 
+Klik [disini](https://tugas2pbpkatalog.herokuapp.com/todolist/) untuk menuju aplikasi Heroku saya :D
 Nama Akun 1: katrinagisella
 Password 1: pbpkatrina
 Nama Akun 2: katrinagisella2
@@ -348,6 +349,9 @@ Melakukan deployment ke Heroku sesuai dengan step pada Lab 0.
 * Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.
 
 Saya membuat dua akun dummy dengan tiga dummy data.
+![User 1](https://github.com/katrinagisellaui/tugas2pbp/blob/main/todolist/Screenshot%20Dummy/Screen%20Shot%202022-09-29%20at%2009.21.44.png)
+![User 2](https://github.com/katrinagisellaui/tugas2pbp/blob/main/todolist/Screenshot%20Dummy/Screen%20Shot%202022-09-29%20at%2009.22.05.png)
+
 
 
 
