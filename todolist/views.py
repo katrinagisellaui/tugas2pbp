@@ -1,4 +1,3 @@
-from urllib import response
 from django.shortcuts import render, redirect, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -11,7 +10,6 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.forms import TodoList
 from todolist.models import Task
-from django.views.generic import CreateView
 
 
 @login_required(login_url='/todolist/login/')
