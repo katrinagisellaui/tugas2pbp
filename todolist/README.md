@@ -36,7 +36,7 @@ Setelah user menekan tombol submit yang biasanya ada pada setiap html form, data
 * Membuat suatu aplikasi baru bernama todolist di proyek tugas Django yang sudah digunakan sebelumnya.
 Mengetikkan ```python manage.py startapp todolist``` pada terminal. 
 
-"*” Menambahkan path todolist sehingga pengguna dapat mengakses http://localhost:8000/todolist.
+* Menambahkan path todolist sehingga pengguna dapat mengakses http://localhost:8000/todolist.
 Lalu, saya menambahkan aplikasi todolist pada URL patterns pada folder project_django sebagai berikut.
 ```
 ...
