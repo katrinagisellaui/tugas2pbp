@@ -259,7 +259,7 @@ Lalu, saya membuat todolist.html yang memuat semua ketentuan pada soal. File tod
  {% endblock content %}
  ```
  
-“*” Membuat halaman form untuk pembuatan task. Data yang perlu dimasukkan pengguna hanyalah judul task dan deskripsi task.
+* Membuat halaman form untuk pembuatan task. Data yang perlu dimasukkan pengguna hanyalah judul task dan deskripsi task.
 
 Membuat class TodoList pada forms.py yang berisi atribut yang ingin saya simpan dari data user. 
 ```
@@ -317,7 +317,7 @@ create_task.html
 </div>
 {% endblock content %}
 ```
-“*” Membuat routing sehingga beberapa fungsi dapat diakses melalui URL sesuai dengan ketentuan soal.
+* Membuat routing sehingga beberapa fungsi dapat diakses melalui URL sesuai dengan ketentuan soal.
 Menambahkan kode berikut pada urls.py yang berada pada folder todolist.
 ```
 rom django.urls import path
@@ -357,8 +357,8 @@ Saya membuat dua akun dummy dengan tiga dummy data.
 
 
 ### References
-https://www.educative.io/answers/what-is-a-csrf-token-in-django
-https://docs.djangoproject.com/en/4.1/topics/forms/
-https://statmath.wu.ac.at/courses/data-analysis/itdtHTML/node43.html 
-https://www.geeksforgeeks.org/render-django-form-fields-manually/ 
+* https://www.educative.io/answers/what-is-a-csrf-token-in-django
+* https://docs.djangoproject.com/en/4.1/topics/forms/
+* https://statmath.wu.ac.at/courses/data-analysis/itdtHTML/node43.html 
+* https://www.geeksforgeeks.org/render-django-form-fields-manually/ 
 
