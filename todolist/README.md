@@ -32,7 +32,7 @@ Setelah user menekan tombol submit yang biasanya ada pada setiap html form, data
 
 ###  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
-“*” Membuat suatu aplikasi baru bernama todolist di proyek tugas Django yang sudah digunakan sebelumnya.
+* Membuat suatu aplikasi baru bernama todolist di proyek tugas Django yang sudah digunakan sebelumnya.
 Mengetikkan ```python manage.py startapp todolist``` pada terminal. 
 
 "*” Menambahkan path todolist sehingga pengguna dapat mengakses http://localhost:8000/todolist.
@@ -43,7 +43,7 @@ Lalu, saya menambahkan aplikasi todolist pada URL patterns pada folder project_d
 ...
 ```
 
-“*” Membuat sebuah model Task yang memiliki atribut sebagai berikut: user, date, title, description
+* Membuat sebuah model Task yang memiliki atribut sebagai berikut: user, date, title, description
 
 Lalu, saya membuat class Task pada models.py dengan atribut sesuai dengan ketentuan soal sebagai berikut.
 
@@ -56,7 +56,7 @@ class Task(models.Model):
     is_finished = models.BooleanField(default = False)
 ```
 
-“*” Mengimplementasikan form registrasi, login, dan logout agar pengguna dapat menggunakan todolist dengan baik.
+* Mengimplementasikan form registrasi, login, dan logout agar pengguna dapat menggunakan todolist dengan baik.
 
 Membuat function pada views.py untuk registrasi, login, dan logout yang bertujuan untuk mengambil data yang diperlukan dari user. Function register dan login akan me-return render menuju file html yang akan menampilkan data yang kita ambil tadi.
 
@@ -187,7 +187,7 @@ register.html
 {% endblock content %}
 ```
 
-“*” Membuat halaman utama todolist yang memuat username pengguna, tombol Tambah Task Baru, tombol logout, serta tabel berisi tanggal pembuatan task, judul task, dan deskripsi task.
+* Membuat halaman utama todolist yang memuat username pengguna, tombol Tambah Task Baru, tombol logout, serta tabel berisi tanggal pembuatan task, judul task, dan deskripsi task.
 Pertama, saya membuat function pada views.py bernama show_todolist sebagai berikut. Function akan me-render todolist.html.
 ```
 @login_required(login_url='/todolist/login/')
@@ -341,11 +341,11 @@ urlpatterns = [
 ]
 ```
 
-“*” Melakukan deployment ke Heroku
+* Melakukan deployment ke Heroku
 Melakukan deployment ke Heroku sesuai dengan step pada Lab 0.
 
 
-“*” Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.
+* Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.
 
 Saya membuat dua akun dummy dengan tiga dummy data.
 
