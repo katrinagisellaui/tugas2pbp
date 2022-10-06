@@ -391,4 +391,27 @@ dan lain-lain yang dapat dibaca [disini](https://www.tutorialrepublic.com/html-r
 * Selektor ID: Mirip dengan selektor Class, tetapi hanya dapat digunakan oleh satu elemen saja (unik). Ditandai dengan tanda # didepannya.
 * Selektor Atribut: Mirip dengan selektor Tag, selektor Atribut memiliki elemen berdasarkan atribut.
 * Selektor Universal: Selektor yang digunakan untuk menyeleksi elemen pada scope tertentu
-* Pseudo Selektor: 
+* Pseudo Selektor: Selektor untuk menyeleksi elemen-elemen semu seperti state dari suatu elemen, elemen before dan after, dsb. Terdapat 2 macam pseudo selektor, yaitu pseudo class selektor untuk state elemen dan pseudo-element selektor untuk elemen semu di HTML.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+* Memasukkan bootstrap ke dalam ```base.html```.
+* Saya mengumbah forms.py saya ke dalam bentuk berikut
+```
+class TodoList(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ('title', 'description')
+
+        widgets = {
+            'title': forms.TextInput(attrs={'placeholder':'Input Judul Task', 'class':'form-control mx-3 my-2'}),
+            'description': forms.Textarea(attrs={'placeholder':'Input Judul Task', 'class':'form-control mx-3 my-2'})
+        }
+```
+
+* Style halaman-halaman yang perlu di-style. Saya sudah mencoba menggunakan style.css, tetapi sayangnya belum berhasil. Untuk mengatasi itu, saya melakukan styling pada setiap .html.
+* Menambahkan breakpoints yang berada pada Bootstrap untuk mengimplementasikan queries pada CSS. 
+
+Referensi:
+* https://www.petanikode.com/css-selektor/ 
+* https://www.niagahoster.co.id/blog/perbedaan-internal-external-dan-inline-css/ 
+* https://www.tutorialrepublic.com/html-reference/html5-tags.php 
