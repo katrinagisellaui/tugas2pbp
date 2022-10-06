@@ -35,9 +35,11 @@
 
     .card:hover{
     transform: scale(1.5);
-    background-color: lightpink;
-    /* box-shadow: 0 10px 20px rgba(0,0,0,1); */
-} 
+    background-color: cyan;
+  } 
+  
+
+  
 </style>
 {% endblock meta %}
 
@@ -65,13 +67,13 @@
 <button class="btn btn-primary mx-5"><a href="{% url 'todolist:create_task' %}" class="btn-link">Tambah Task Baru</a></button>
 
 
-<div class="container-fluid m-3 d-flex justify-content-center align-items-center">
+<div class="container-fluid m-3 d-flex justify-content-center align-items-center>">
     <div class="row">
         {% for task in list_todolist %}
         <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card my-10" style="width: 10rem;">
+            <div class="card my-5">
                 <div class="card-body">
-                    <h5 class="card-title">{{task.title}}
+                    <h5 class="card-title" style="color: grey;">{{task.title}}
                         <span class="badge badge-primary" style="background-color: lightcoral;">
                             {% if task.is_finished %}
                             Selesai
@@ -80,8 +82,8 @@
                             {% endif %}
                         </span>
                     </h5>
-                    <h6 class="card-subtitle my-2 text-muted">Dibuat pada: {{task.date}}</h6>
-                    <p class="card-text">{{task.description}}</p>
+                    <h6 class="card-subtitle my-2 text-muted" style="color: grey;">Dibuat pada: {{task.date}}</h6>
+                    <p class="card-text" style="font-weight: light;">{{task.description}}</p>
                     <button class="btn btn-primary btn m-1"><a href="{% url 'todolist:change_done' task.id %}" class="btn-link">Change Done</a></button>
                     <button class="btn btn-primary btn m-1"><a href="{% url 'todolist:remove_task' task.id %}" class="btn-link">Remove Task</a></button>
                 </div>
