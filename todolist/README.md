@@ -376,13 +376,13 @@ Contoh inline CSS:
 * External CSS adalah kodes CSS yang tertulis terpisah dari kode HTML yang ditulis dalam file ```.css```. Dengan menggunakan external CSS, ukuran HTML akan lebih kecil dan struktur kode akan lebih rapi. Loading website juga akan menjadi lebih cepat. File CSS juga dapat digunakan di beberapa halaman website sekaligus. 
 
 ### Jelaskan tag HTML5 yang kamu ketahui.
-* <abbr>: penyingkatan kata atau frasa yang panjang
-* <b>: Membuat text menjadi bold
-* <br>: Membuat button
-* <data>: Me-link konten dengan terjemahan yang bisa dibaca mesin
-* <form>: Mendefinisikan form HTML untuk input user
-* <html>: Mendefinisikan root dokumen HTML
-* <head>: Mendefinisikan bagian atas (head) dari dokumen yang berisi informasi tentant hal-hal seperti title
+* ```<abbr>```: penyingkatan kata atau frasa yang panjang
+* ```<b>```: Membuat text menjadi bold
+* ```<br>```: Membuat button
+* ```<data>```: Me-link konten dengan terjemahan yang bisa dibaca mesin
+* ```<form>```: Mendefinisikan form HTML untuk input user
+* ```<html>```: Mendefinisikan root dokumen HTML
+* ```<head>```: Mendefinisikan bagian atas (head) dari dokumen yang berisi informasi tentant hal-hal seperti title
 dan lain-lain yang dapat dibaca [disini](https://www.tutorialrepublic.com/html-reference/html5-tags.php)
 
 ###  Jelaskan tipe-tipe CSS selector yang kamu ketahui.
