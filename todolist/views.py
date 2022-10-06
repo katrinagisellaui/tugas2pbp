@@ -12,6 +12,7 @@ from todolist.forms import TodoList
 from todolist.models import Task
 
 
+
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
     todo = Task.objects.filter(user=request.user)

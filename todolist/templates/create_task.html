@@ -1,21 +1,38 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block meta %}
-<title>Create Task</title>
+<title>Tambah Task Baru</title>
+<style>
+    body {
+        font-family: 'Algreya Sans SC', sans-serif;
+        background-color: lightskyblue;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
 {% endblock meta %}
 
 {% block content %}
-<body style="background-color:rgb(178, 230, 176);">
 
-<div class = "create_task">
-    <h1>Create Task</h1>
-        <form method="POST" action="">
-            {% csrf_token %}
-            <table>
-                {{ form.as_table }}
-            </table>
-            <input type ="submit" name="submit" value="Create Task">
-        </form>
+<div class = "create">
+
+    <p class="h3 text-center">Buat Task Baru</p>
+    <hr />
+
+    <form method="POST" action="" class="form-container">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input class="btn btn-primary my-2" type="submit" name="submit" value="Tambah Task">
+    </form>
+    
 </div>
+
 {% endblock content %}
 
+<!-- References: https://youtu.be/6-XXvUENY_8 -->

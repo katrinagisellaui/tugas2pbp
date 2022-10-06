@@ -1,55 +1,95 @@
 {% extends 'base.html' %}
+{% load static %}
 
- {% block content %}
-  <body style="background-color:powderblue;">
-  <h1>Tugas 4 Assignment PBP</h1>
-
-  <h5>Username </h5>
-  <p>{{username}}</p>
-  <style>
-    table, th, td {
-        border: 1px solid black;
+{% block meta %}
+<title>Registrasi Akun Baru</title>
+<style>
+    body {
+        font-family: 'Algreya Sans SC', sans-serif;
+        background-color: lightskyblue;
+        height: 100vh;
     }
-    </style>
+  
+    .navbar {
+      background-color: lightgoldenrodyellow;
+    }
+    .btn-primary{
+        background-color: lightblue;
+        border-color: lightpink;
+    }
+    .btn-link{
+      background-color: lightblue;
+      border-color: lightpink;
+      border: 1px;
+    }
 
-  <table>
-    <tr>
-      <th>User</th>
-      <th>Date</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Is Finished?</th>
-      <th>Change Finish </th>
-      <th>Delete</th>
-    </tr>
-    {% comment %} Add the data below this line {% endcomment %}
-    {% for task in list_todolist %}
-        <tr>
-            <th>{{task.user}}</th>
-            <th>{{task.date}}</th>
-            <th>{{task.title}}</th>
-            <th>{{task.description}}</th>
-            <th>
-                {% if task.is_finished %}
-                Selesai
-                {% else %}
-                Belum Selesai
-                {% endif %}
-            </th>
-            <th>
-            <button><a href="{% url 'todolist:change_done' task.id %}" title="">Change</a></button>
-            </th>
-            <th>
-            <button><a href="{% url 'todolist:remove_task' task.id %}" title="">Remove</a></button>
-            </th>
-        </tr>
-    {% endfor %}
-  </table>
-  <h5>Sesi terakhir login: {{ last_login }}</h5>
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-  <button><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
+    .h1{
+      font-size: xx-large;
+      font-weight: bold;
+    }
+
+    .h5 {
+      font-size: medium;
+      font-weight: lighter;
+    }
+
+    .card:hover{
+    transform: scale(1.5);
+    background-color: lightpink;
+    /* box-shadow: 0 10px 20px rgba(0,0,0,1); */
+} 
+</style>
+{% endblock meta %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <a class="navbar-brand" href="#">TODO LIST</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="https://pbp-fasilkom-ui.github.io/ganjil-2023/">Link Github PBP <span class="sr-only">(current)</span></a>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-primary"><a href="{% url 'todolist:logout' %}" class="btn-link">Logout</a></button>
+        </form>
+    </div>
+</nav>
+
+<p class="h1 m-4">{{username}}'s To-Do List</p>
+<p class="h5 m-4">Sesi terakhir login: {{ last_login }}</p>
+
+<button class="btn btn-primary mx-5"><a href="{% url 'todolist:create_task' %}" class="btn-link">Tambah Task Baru</a></button>
 
 
- {% endblock content %}
+<div class="container-fluid m-3 d-flex justify-content-center align-items-center">
+    <div class="row">
+        {% for task in list_todolist %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card my-10" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{task.title}}
+                        <span class="badge badge-primary" style="background-color: lightcoral;">
+                            {% if task.is_finished %}
+                            Selesai
+                            {% else %}
+                            Belum Selesai
+                            {% endif %}
+                        </span>
+                    </h5>
+                    <h6 class="card-subtitle my-2 text-muted">Dibuat pada: {{task.date}}</h6>
+                    <p class="card-text">{{task.description}}</p>
+                    <button class="btn btn-primary btn m-1"><a href="{% url 'todolist:change_done' task.id %}" class="btn-link">Change Done</a></button>
+                    <button class="btn btn-primary btn m-1"><a href="{% url 'todolist:remove_task' task.id %}" class="btn-link">Remove Task</a></button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 
+{% endblock content %}

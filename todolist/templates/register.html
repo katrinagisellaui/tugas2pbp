@@ -1,35 +1,54 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block meta %}
-<title>Registrasi Akun</title>
+<title>Registrasi Akun Baru</title>
+<style>
+    body {
+        font-family: 'Algreya Sans SC', sans-serif;
+        background-color: lightskyblue;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .register {
+    padding: 40px;
+    border-radius: 20px;
+    background-color: lightgoldenrodyellow;
+    }
+    .btn-primary{
+        background-color: lightblue;
+        border-color: lightpink;
+    }
+</style>
 {% endblock meta %}
 
+
 {% block content %}  
-<body style="background-color:pink;">
 
-<div class = "login">
-    
-    <h1>Formulir Registrasi</h1>  
-
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-        </form>
+<div class = "register">
+    <p class="h3 text-center">Formulir Registrasi</p>
+    <hr />
 
     {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
+        {% for message in messages %}  
+            <div class="alert alert-secondary" role="alert">
+                {{ message }}
+            </div> 
+        {% endfor %}  
     {% endif %}
 
+    <form method="POST" class="form-container">  
+        {% csrf_token %}  
+        <table>  
+            {{ form.as_table }}  
+            <tr>  
+                <td><input class="btn btn-primary my-2" type="submit" name="submit" value="Daftar"/></td>  
+            </tr>  
+        </table>  
+    </form>
 </div>  
 
 {% endblock content %}

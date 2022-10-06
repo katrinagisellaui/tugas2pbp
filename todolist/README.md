@@ -362,3 +362,33 @@ Saya membuat dua akun dummy dengan tiga dummy data.
 * https://statmath.wu.ac.at/courses/data-analysis/itdtHTML/node43.html 
 * https://www.geeksforgeeks.org/render-django-form-fields-manually/ 
 
+
+
+# Tugas 5 PBP
+
+### Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+* Inline CSS adalah kode CSS yang dituliskan pada atribut elemen HTML secara langsung. Inline CSS berguna ketika memerlukan perubahan yang cepat, ingin menguji perubahan saja, atau proses permintaan HTTP lebih kecil. Namun, inline CSS tidak efisien karena hanya bisa diterapkan pada satu elemen HTML saja.
+Contoh inline CSS:
+```<h2 style="color:blue; font-family: arial;">Niagahoster</h2>```
+
+* Internal CSS adalah kode CSS yang ditulis dalam tag <style>. Kode HTML ditulis pada bagian atas file HTML. Perubahan yang dibuat oleh internal CSS hanya berlaku pada satu halaman saja. HTML dan CSS juga berada pada satu file. Namun, internal CSS tidak efisien untuk jika ingin menggunakan CSS yang sama pada beberapa file dan performa website tidak begitu cepat.
+
+* External CSS adalah kodes CSS yang tertulis terpisah dari kode HTML yang ditulis dalam file ```.css```. Dengan menggunakan external CSS, ukuran HTML akan lebih kecil dan struktur kode akan lebih rapi. Loading website juga akan menjadi lebih cepat. File CSS juga dapat digunakan di beberapa halaman website sekaligus. 
+
+### Jelaskan tag HTML5 yang kamu ketahui.
+* <abbr>: penyingkatan kata atau frasa yang panjang
+* <b>: Membuat text menjadi bold
+* <br>: Membuat button
+* <data>: Me-link konten dengan terjemahan yang bisa dibaca mesin
+* <form>: Mendefinisikan form HTML untuk input user
+* <html>: Mendefinisikan root dokumen HTML
+* <head>: Mendefinisikan bagian atas (head) dari dokumen yang berisi informasi tentant hal-hal seperti title
+dan lain-lain yang dapat dibaca [disini](https://www.tutorialrepublic.com/html-reference/html5-tags.php)
+
+###  Jelaskan tipe-tipe CSS selector yang kamu ketahui.
+* Selektor Tag: Disebut sebagai type selector. Selektor Tag akan memiliki elemen berdasarkan nama tag.
+* Selektor Class: Selektor yang akan memiliki elemen berdasarkan nama class yang diberikan, ditandai dengan titik di depannya.
+* Selektor ID: Mirip dengan selektor Class, tetapi hanya dapat digunakan oleh satu elemen saja (unik). Ditandai dengan tanda # didepannya.
+* Selektor Atribut: Mirip dengan selektor Tag, selektor Atribut memiliki elemen berdasarkan atribut.
+* Selektor Universal: Selektor yang digunakan untuk menyeleksi elemen pada scope tertentu
+* Pseudo Selektor: 
