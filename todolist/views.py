@@ -11,8 +11,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.forms import TodoList
 from todolist.models import Task
-from django.http import JsonResponse
-
+from django.http import JsonResponse, HttpResponse
+from django.core import serializers
 
 
 @login_required(login_url='/todolist/login/')
@@ -67,7 +67,7 @@ def create_task(request):
 
 
 @login_required(login_url='/todolist/login/')
-def create_rtrn_json(request):
+def create_json(request):
     if(request.user.is_authenticated):
         user = request.user;
         form = TodoList(request.POST or None) 
@@ -77,12 +77,17 @@ def create_rtrn_json(request):
             date = datetime.datetime.now()
             new_task = Task.objects.create(title=title, description = desc, date = date, user = user)
             return JsonResponse({
-                'pk': task.pk,
-                'done': task.done,
+                'pk': new_task.pk,
+                'done': new_task.done,
                 'title': title,
                 'description': desc,
                 'date': date,
             })
+
+
+def return_json(request):
+    tasks = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json',tasks), content_type='application/json')
 
 # def create_task(request):
     # form = TodoList()
@@ -106,13 +111,13 @@ def create_rtrn_json(request):
 def remove_task(request, id):
     deletion = Task.objects.filter(id=id)
     deletion.delete()
-    return redirect('todolist:show_todolist')
+    return HttpResponseRedirect(reverse('todolist:show_todolist'))
 
 def change_done(request, id):
     change = Task.objects.get(id = id)
     change.is_finished = not(change.is_finished)
     change.save()
-    return redirect('todolist:show_todolist')
+    return HttpResponseRedirect(reverse('todolist:show_todolist'))
 
 
 
