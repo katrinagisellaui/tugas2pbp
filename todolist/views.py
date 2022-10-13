@@ -90,7 +90,6 @@ def add_todolist_item(request):
         user = request.user
         date = datetime.now()
         is_finished = False
-
         new_task = Task(user=user, date=date, title=task_title, description=task_description, is_finished=is_finished)
         new_task.save()
         return HttpResponse(b"CREATED", status=201)

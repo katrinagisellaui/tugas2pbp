@@ -429,6 +429,123 @@ Event-Driven Programming adalah paradigma dimana entitas seperti objek, layanan,
 ### Jelaskan penerapan asynchronous programming pada AJAX.
 AJAX menerapkan data transfer asynchronous (HTTP request) antara browser dan web server. Teknik yang diterapkan oleh AJAX akan bergantian dalam menukar data dan me-reload seluruh halaman. Saat user ingin mengirimkan request atau event ke server, event atau request ini akan ditampung oleh mesin AJAX. Mesin AJAX akan menampung semua event/request dari user dan melakukan transfer data. Setelah itu, data akan diproses (server-side) secara asynchronous. Hasil dari proses ini akan mengupdate halaman website secara otomatis tanpa perlunya action refresh dari user.
 
+###  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+*  Membuat view sebagai berikut
+```
+@login_required(login_url='/todolist/login/')
+def get_todolist_json(request):
+    todolist_item = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", todolist_item), content_type="application/json")
+
+```
+* Menambahkan path berikut di urls.py pada file todolist saya
+```
+    path('add/', add_todolist_item, name='add_todolist_item'),
+```
+
+* Menambahkan function pada bagian ```<script></script>``` sebagai berikut
+``` 
+async function getTodolist() {
+        return fetch("{% url 'todolist:get_todolist_json' %}").then((res) => res.json())
+    }
+```
+
+* Menambahkan button untuk membuka modal
+```
+<button type="button" class="btn btn-primary mx-5" data-toggle="modal" data-target="#exampleModal">Add Task</button>
+
+```
+
+* Membuat modal untuk tempat menambah task
+```
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+            <form id="form-myform" onsubmit="return false;">
+                <div class="modal-body">
+                    {% csrf_token %}
+                    <div class="form-group">
+                     <form role="'form" method="POST" action="" id="form" onsubmit="return false;"> 
+                        <input type="hidden" name="_token" value=""> 
+                            <label for="title" class="control-label">Judul Task</label>
+                            <div>
+                                <input type="text" class="form-control input-lg" name="title" placeholder="title" id="title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="control-label">Description</label>
+                            <div>
+                                <input type="text" class="form-control input-lg" name="description" placeholder="description" id="description">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <button type="submit" class="btn btn-primary" id="savebutton">Save changes</button>
+                        </div> 
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+      </div>
+    </div>
+  </div> 
+
+```
+
+* Menambahkan path sebagai berikut
+```
+    path('json/', get_todolist_json, name='get_todolist_json'),
+```
+
+* Menambahkan potongan kode pada ```<script></script>```
+```
+async function refreshTodolist() {
+        document.getElementById("title").value = ""
+        document.getElementById("description").value = ""
+        document.getElementById("cards").innerHTML = ""
+        const todolist = await getTodolist()
+        let htmlString = ""
+        todolist.forEach((task) => {
+            let is_finished = task.fields.is_finished ? "Selesai" : "Belum Selesai";
+            htmlString += `\n<div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div id="${task.pk}" class="card my-3" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${task.fields.title}
+                                                <span class="badge badge-secondary">
+                                                    ${is_finished}
+                                                </span>
+                                            </h5>
+                                            <h6 class="card-subtitle my-2 text-muted">Created on ${task.fields.date}</h6>
+                                            <p class="card-text">${task.fields.description}</p>
+                                            <button class="btn btn-primary btn-sm m-2"><a href="change-done/${task.pk}" class="btnlink">Change Status</a></button>
+                                            <button class="btn btn-danger btn-sm m-2"><a href="remove-task/${task.pk}" class="btnlink">Remove Task</a></button>
+                                        </div>
+                                    </div>
+                                </div>`
+        })
+        
+         document.getElementById("cards").innerHTML = htmlString
+    }
+
+    function addTodolist() {
+        fetch("{% url 'todolist:add_todolist_item' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form-myform'))
+        }).then(refreshTodolist)
+        return false
+    }
+
+    document.getElementById("savebutton").onclick = addTodolist
+    refreshTodolist()
+```
+
 
 Referensi:
 * https://www.outsystems.com/blog/posts/asynchronous-vs-synchronous-programming/ 
