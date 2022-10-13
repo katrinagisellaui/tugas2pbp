@@ -1,4 +1,5 @@
 from hashlib import new
+from multiprocessing import context
 from django.shortcuts import render, redirect, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -6,12 +7,13 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-import datetime
+from datetime import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+import todolist
 from todolist.forms import TodoList
 from todolist.models import Task
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from django.core import serializers
 
 
@@ -47,7 +49,7 @@ def login_user(request):
         if user is not None:
             login(request, user) # melakukan login terlebih dahulu
             response = HttpResponseRedirect(reverse("todolist:show_todolist")) # membuat response
-            response.set_cookie('last_login', str(datetime.datetime.now())) # membuat cookie last_login dan menambahkannya ke dalam response
+            response.set_cookie('last_login', str(datetime.now())) # membuat cookie last_login dan menambahkannya ke dalam response
             return response
         else:
             messages.info(request, 'Username atau Password salah!')
@@ -63,61 +65,49 @@ def logout_user(request):
 
 @login_required(login_url='/todolist/login/')
 def create_task(request):
-    return render(request, 'create_task.html')
-
+    form = TodoList()
+    if request.method == "POST":
+        form = TodoList(request.POST)
+        if form.is_valid():
+            new_task = form.save(commit=False)
+            new_task.user = request.user
+            new_task.save() 
+            return redirect('todolist:show_todolist')
+    
+    context = {'form':form}
+    return render(request, 'create_task.html', context)
 
 @login_required(login_url='/todolist/login/')
-def create_json(request):
-    if(request.user.is_authenticated):
-        user = request.user;
-        form = TodoList(request.POST or None) 
-        if(form.is_valid):
-            title = form.cleaned_data['title']
-            desc = form.cleaned_data['description']
-            date = datetime.datetime.now()
-            new_task = Task.objects.create(title=title, description = desc, date = date, user = user)
-            return JsonResponse({
-                'pk': new_task.pk,
-                'done': new_task.done,
-                'title': title,
-                'description': desc,
-                'date': date,
-            })
+def get_todolist_json(request):
+    todolist_item = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", todolist_item), content_type="application/json")
 
+@login_required(login_url='/todolist/login/')
+def add_todolist_item(request):
+    if request.method == 'POST':
+        task_title = request.POST.get("title")
+        task_description = request.POST.get("description")
+        user = request.user
+        date = datetime.now()
+        is_finished = False
 
-def return_json(request):
-    tasks = Task.objects.filter(user=request.user)
-    return HttpResponse(serializers.serialize('json',tasks), content_type='application/json')
+        new_task = Task(user=user, date=date, title=task_title, description=task_description, is_finished=is_finished)
+        new_task.save()
+        return HttpResponse(b"CREATED", status=201)
 
-# def create_task(request):
-    # form = TodoList()
-    # if request.method == 'POST':
-    #     form  = TodoList(request.POST)
-    #     if form.is_valid():
-    #         new_form = Task()
-    #         new_form.user = request.user
-    #         new_form.date = datetime.datetime.now()
-    #         new_form.title = form.cleaned_data['title']
-    #         new_form.description = form.cleaned_data['description']
-    #         new_form.save()
-           
-            # return redirect('todolist:show_todolist')
-    #     else:
-    #         # messages.info(request, 'Input tidak valid!')
-    #         form = TodoList()
-    # context = {'form':form}
-    # return render(request, 'create_task.html', context)
+    return HttpResponseNotFound()
+
 
 def remove_task(request, id):
     deletion = Task.objects.filter(id=id)
     deletion.delete()
-    return HttpResponseRedirect(reverse('todolist:show_todolist'))
+    return redirect('todolist:show_todolist')
 
 def change_done(request, id):
     change = Task.objects.get(id = id)
     change.is_finished = not(change.is_finished)
     change.save()
-    return HttpResponseRedirect(reverse('todolist:show_todolist'))
+    return redirect('todolist:show_todolist')
 
 
 

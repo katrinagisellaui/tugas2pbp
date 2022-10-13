@@ -6,7 +6,8 @@ from todolist.views import show_todolist
 from todolist.views import create_task
 from todolist.views import change_done
 from todolist.views import remove_task
-
+from todolist.views import add_todolist_item
+from todolist.views import get_todolist_json
 app_name = 'todolist'
 
 urlpatterns = [
@@ -16,5 +17,7 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('create-task/', create_task, name='create_task'),
     path('change-done/<int:id>', change_done, name='change_done'),
-    path('remove-task/<int:id>', remove_task, name='remove_task')
+    path('remove-task/<int:id>', remove_task, name='remove_task'),
+    path('add/', add_todolist_item, name='add_todolist_item'),
+    path('json/', get_todolist_json, name='get_todolist_json'),
 ]

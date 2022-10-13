@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+<!-- {% extends 'base.html' %}
 {% load static %}
 
 
@@ -35,4 +35,29 @@
 
 {% endblock content %}
 
-<!-- References: https://youtu.be/6-XXvUENY_8 -->
+References: https://youtu.be/6-XXvUENY_8 -->
+
+
+{% extends 'base.html' %}
+{% block meta %}
+
+<title>Create Task</title>
+
+{% endblock meta %}
+
+{% block content %}
+<div class="create_task">
+    <p class="'text">
+        CREATE TASK
+    </p>
+    <form method="POST">
+        <div class="'w_screen">
+            {% csrf_token %}
+            <div class="w_full">
+                <table  class="">  
+                    {{ form.as_table }}          
+                </table>  
+            </div>
+        </div>
+    </form>
+</div>

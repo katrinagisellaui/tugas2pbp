@@ -415,3 +415,22 @@ Referensi:
 * https://www.petanikode.com/css-selektor/ 
 * https://www.niagahoster.co.id/blog/perbedaan-internal-external-dan-inline-css/ 
 * https://www.tutorialrepublic.com/html-reference/html5-tags.php 
+
+
+# Tugas 6 PBP
+
+### Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+* Synchronous programming adalah programming dimana kita harus menunggu selesainya satu task untuk melakukan task selainnya.
+* Pada asynchronous programming, kita dapat melanjutkan ke task selanjutya walaupun task sebelumnya belum selesai. Dengan kata lain, asynchronous programming dapat menjalankan beberapa request secara bersamaan.
+
+###  Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma Event-Driven Programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Event-Driven Programming adalah paradigma dimana entitas seperti objek, layanan, dan lain-lain dapat berkomunikasi secara tidak langsung melalui sebuah perantara (intermediary). Penerapan AJAX pada tugas ini adalah button add untuk membuat task baru.
+
+### Jelaskan penerapan asynchronous programming pada AJAX.
+AJAX menerapkan data transfer asynchronous (HTTP request) antara browser dan web server. Teknik yang diterapkan oleh AJAX akan bergantian dalam menukar data dan me-reload seluruh halaman. Saat user ingin mengirimkan request atau event ke server, event atau request ini akan ditampung oleh mesin AJAX. Mesin AJAX akan menampung semua event/request dari user dan melakukan transfer data. Setelah itu, data akan diproses (server-side) secara asynchronous. Hasil dari proses ini akan mengupdate halaman website secara otomatis tanpa perlunya action refresh dari user.
+
+
+Referensi:
+* https://www.outsystems.com/blog/posts/asynchronous-vs-synchronous-programming/ 
+* https://www.smilejogja.com/pemrograman/xml-ajax/ 
+* https://dosenit.com/javascript/perbedaan-synchronous-dan-asynchronous-ajax 
